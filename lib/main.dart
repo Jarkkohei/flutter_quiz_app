@@ -12,7 +12,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  final questions = const [
+  final _questions = const [
     {
       'questionText': 'What\'s your favorite color?',
       'answers': ['Blue', 'Red', 'Green', 'Yellow']
@@ -35,7 +35,7 @@ class _MyAppState extends State<MyApp> {
     });
     print(_questionIndex);
 
-    if (_questionIndex < questions.length) {
+    if (_questionIndex < _questions.length) {
       print('We have more questions!');
     } else {
       print('No more questions!');
@@ -49,8 +49,8 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: Text('My First App'),
         ),
-        body: _questionIndex < questions.length
-            ? Quiz(answerQuestion: _answerQuestion, questions: questions, questionIndex: _questionIndex,)
+        body: _questionIndex < _questions.length
+            ? Quiz(answerQuestion: _answerQuestion, questions: _questions, questionIndex: _questionIndex,)
             : Center(
                 child: Text('You did it!'),
               ),
